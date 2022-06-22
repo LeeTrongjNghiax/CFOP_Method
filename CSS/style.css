@@ -1,0 +1,152 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+html {
+    background-color: black;
+}
+h1, td {
+    text-align: center;
+    color: white;
+}
+h2, td {
+    font-weight: bolder;
+    color: white;
+}
+tr, td {
+    padding: 8px;
+}
+table {
+    margin: auto;
+    font-size: 18px;
+    background-color: black;
+}
+
+
+.r90 {
+    transform: rotate(90deg);
+}
+.r180 {
+    transform: rotate(180deg);
+}
+
+
+
+.important {
+    background-color: red;
+    color: lightblue;
+}
+.easy {
+    background-color: green;
+    color: pink;
+}
+.very_easy {
+    background-color: lime;
+    color: magenta;
+}
+
+
+
+.c2o9 {
+    background-color: blue;
+}
+
+.c1o9 {
+    background-color: green;
+}
+
+.c1o18 {
+    background-color: yellow;
+    color: black;
+}
+
+.c1o36 {
+    background-color: orange;
+}
+
+.c1o72 {
+    background-color: red;
+}
+
+
+
+.c27 {
+    background-color: green;
+}
+
+.c54 {
+    background-color: yellow;
+    color: black;
+}
+
+.c108 {
+    background-color: orange;
+}
+
+.c216 {
+    background-color: red;
+}
+
+
+.g1 {
+  opacity: 1;
+  stroke-width: 0.1;
+  stroke-linejoin: round;	
+}
+.g2 {
+  opacity: 1;
+  stroke-width: 0;
+  stroke-opacity: 0.5;        	
+  stroke-linejoin: round;
+}
+
+
+
+.red { 
+  fill: red; 
+}
+.orange { 
+  fill: orange; 
+}
+.blue { 
+  fill: blue; 
+}
+.green { 
+  fill: green; 
+}
+.black {
+  fill: black;
+}
+.gray {
+    fill: gray;
+}
+.yellow { 
+  fill: yellow; 
+}
+
+
+
+.redstroke { 
+    stroke: red; 
+}
+.bluestroke { 
+    stroke: blue; 
+}
+.blackstroke {
+    stroke: black;
+}
+
+
+
+.square {
+  stroke-width: 2.5%; 
+  stroke: black;
+}
+.line {
+  stroke-width: 2%; 
+}
+.rect {
+  stroke-width: 1.5%; 
+  stroke: black;
+}

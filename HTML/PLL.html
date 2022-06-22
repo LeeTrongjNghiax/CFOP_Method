@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLL Method</title>
+
+  <script src="../JS/jquery-3.6.0.min.js"></script>
+  <script src="../JS/bootstrap.js"></script>
+  <script src="../JS/modules/drawCube.js"></script>  
+  <script src="../JS/modules/drawSquare.js"></script>  
+  <script src="../JS/modules/createSelector.js"></script>
+  <script src="../JS/modules/globalValues.js"></script>
+  
+  <link rel="stylesheet" href="../CSS/bootstrap.css">
+
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: black;
+      border: 1px solid lightgreen;
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    <h1>PLL</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Image 2D</th>
+          <th>Image 3D</th>
+          <th>Options</th>
+          <th>Algorithm</th>
+          <th>Probality</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+  </div>
+  <script>
+    function filterType() { 
+      table = document.querySelector("table > tbody");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[5];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+
+          let t = document.querySelector('select').options[
+            document.querySelector('select').selectedIndex
+          ].value;
+
+          if (txtValue == t) {
+            tr[i].style.display = "";
+          } else if ( t == `all` ) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+
+    function rotateImage(tag) {
+      let tr = tag.parentElement.parentElement;
+      let name = tr.querySelector("td:first-child").textContent.replace("OLL ", "");
+      let pll = pllList.find(elem => elem.id == name);
+
+      if (/y$/.test(tag.textContent)) {
+        pll.y();
+      } else if (/y'$/.test(tag.textContent)) {
+        pll.yPrime();
+      }
+
+      tr.replaceChild(document.createElement("td"), tr.children[1]);
+      tr.querySelector("td:nth-child(2)").innerHTML += drawSquare(pll);
+      tr.replaceChild(document.createElement("td"), tr.children[2]);
+      tr.querySelector("td:nth-child(3)").innerHTML += drawCube(pll);
+
+      let regex;
+      switch (Math.abs(pll.rotateCount) % 4) {
+        case 1:
+          regex = /^y /;
+          break;
+        case 2:
+          regex = /^y2 /;
+          break;
+        case 3:
+          regex = /^y' /;
+          break;
+        default:
+          regex = /[^y]/;
+      }
+      let selector = createSelector(pll, regex);
+      tr.replaceChild(document.createElement("td"), tr.children[4]);
+      tr.querySelector("td:nth-child(5)").innerHTML += selector;
+    }
+
+    function rotateColorScheme(tag) {
+      let tr = tag.parentElement.parentElement;
+      let name = tr.querySelector("td:first-child").textContent.replace("OLL ", "");
+      let pll = pllList.find(elem => elem.id == name);
+
+      pll.rotateColorScheme();
+
+      tr.replaceChild(document.createElement("td"), tr.children[1]);
+      tr.querySelector("td:nth-child(2)").innerHTML += drawSquare(pll);
+      tr.replaceChild(document.createElement("td"), tr.children[2]);
+      tr.querySelector("td:nth-child(3)").innerHTML += drawCube(pll);
+    }
+
+    function turnColor(tag) {
+      let tr = tag.parentElement.parentElement;
+      let name = tr.querySelector("td:first-child").textContent.replace("OLL ", "");
+      let pll = pllList.find(elem => elem.id == name);
+
+      if (pll.toggle2LayerColorsCount % 2 == 0)
+        pll.toggle2LayerColors("on");
+      else
+        pll.toggle2LayerColors("off");
+
+      tr.replaceChild(document.createElement("td"), tr.children[1]);
+      tr.querySelector("td:nth-child(2)").innerHTML += drawSquare(pll);
+      tr.replaceChild(document.createElement("td"), tr.children[2]);
+      tr.querySelector("td:nth-child(3)").innerHTML += drawCube(pll);
+    }
+
+    function turnU(tag) {
+      let tr = tag.parentElement.parentElement;
+      let name = tr.querySelector("td:first-child").textContent.replace("OLL ", "");
+      let pll = pllList.find(elem => elem.id == name);
+
+      pll.U();
+
+      tr.replaceChild(document.createElement("td"), tr.children[1]);
+      tr.querySelector("td:nth-child(2)").innerHTML += drawSquare(pll);
+      tr.replaceChild(document.createElement("td"), tr.children[2]);
+      tr.querySelector("td:nth-child(3)").innerHTML += drawCube(pll);
+
+      let regex;
+      switch (Math.abs(pll.rotateCount) % 4) {
+        case 1:
+          regex = /^y /;
+          break;
+        case 2:
+          regex = /^y2 /;
+          break;
+        case 3:
+          regex = /^y' /;
+          break;
+        default:
+          regex = /[^y]/;
+      }
+      let selector = createSelector(pll, regex);
+      tr.replaceChild(document.createElement("td"), tr.children[4]);
+      tr.querySelector("td:nth-child(5)").innerHTML += selector;
+    }
+  </script>
+  <script src="../JS/PLLGen.js"></script>
+</body>
+</html>
