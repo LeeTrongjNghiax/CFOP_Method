@@ -590,7 +590,7 @@ pllList.push(
       d: [ [ w, w, w ], [ w, w, w ], [ w, w, w ] ],
     },
     [ 
-      `M2 U M' U2 M U M2`
+      `M2 U M' U2 M U M2`,
       `R2 U' R' U' R U R U R U' R`,
       `y M2 u' M' u2 M' u' M2`,
       `y2 M2 U M U2 M' U M2`,
@@ -671,8 +671,8 @@ pllList.push(
       `y2 M2 U M2 U M' U2 M2 U2 M'`,
       `y M' U M2 U M2 U M' U2 M2`,
       `y' M' U M2 U M2 U M' U2 M2`,
-      `y M2 U' M2 U' M' U2 M2 U2 M'`
-      `y' M2 U' M2 U' M' U2 M2 U2 M'`
+      `y M2 U' M2 U' M' U2 M2 U2 M'`,
+      `y' M2 U' M2 U' M' U2 M2 U2 M'`,
     ],
     '/',
   ),
