@@ -6,9 +6,16 @@ let gr = "green";
 let b = "blue";
 let w = "white";
 
+// 0 = gray
+// 1 = white
+// 2 = yellow
+// 3 = green
+// 4 = blue
+// 5 = red
+// 6 = orange
+
 class RubikCube{
-  constructor(id, faces, algorithms, probability, type) {
-    this.id = id;
+  constructor(faces) {
     this.faces = faces;
   }
   x() {

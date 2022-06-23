@@ -25,21 +25,14 @@
 
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3">
-        <a href="HTML/CFOP.html">CFOP</a>
-      </div>
-      <div class="col-md-3">
-        <a href="HTML/F2L.html">F2L</a>
-      </div>
-      <div class="col-md-3">
-        <a href="HTML/OLL.html">OLL</a>
-      </div>
-      <div class="col-md-3">
-        <a href="HTML/PLL.html">PLL</a>
-      </div>
-    </div>
-  </div>
+  <p id="txtHint"></p>
+  <script>
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+      document.getElementById("txtHint").innerHTML = this.responseText;
+    }
+    xhttp.open("GET", "PHP/getF2LRubikCube.php");
+    xhttp.send();
+  </script>
 </body>
 </html>
