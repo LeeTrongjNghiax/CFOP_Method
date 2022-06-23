@@ -179,6 +179,28 @@ class RubikCube{
     this.rotateCount--;
     if (this.rotateCount == 4) this.rotateCount = 0;
   }
+  rotateColorScheme() {
+    for (const face in this.faces) {
+      for (let i = 0; i < this.faces[face].length; i++) {
+        for (let j = 0; j < this.faces[face][i].length; j++) {
+          switch (this.faces[face][i][j]) {
+            case gr :
+              this.faces[face][i][j] = o;
+              break;
+            case o :
+              this.faces[face][i][j] = b;
+              break;
+            case b :
+              this.faces[face][i][j] = r;
+              break;
+            case r :
+              this.faces[face][i][j] = gr;
+              break;
+          }
+        }
+      }
+    }
+  }
 }
 
 let f2lList = [];
@@ -2279,19 +2301,15 @@ f2lList.push(
 )
 
 for (let i = 0; i < f2lList.length; i++) {
-  // let c = "";
-  // for (const key in f2lList[i].corner) {
-  //   if (f2lList[i].corner[key] != 0) c += "corner" + key.toUpperCase() + " ";
-  // }
-  // for (const key in f2lList[i].edge) {
-  //   if (f2lList[i].corner[key] != 0) c += "edge" + key.toUpperCase() + " ";
-  // }
   document.querySelector("table > tbody").innerHTML += `
     <tr>
-      <td>OLL ${f2lList[i].id}</td>
+      <td>${f2lList[i].id}</td>
       <td>${drawCube(f2lList[i])}</td>
       <td>
         <button onclick="rotateImage(this)">Rotate y</button>
+        <br>
+        <button onclick="rotateColorScheme(this)">Rotate Color Scheme</button>
+        <br>
       </td>
       <td>${createSelector(f2lList[i], /[^y]/)}</td>
     </tr>
