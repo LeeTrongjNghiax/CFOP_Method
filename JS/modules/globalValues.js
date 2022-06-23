@@ -511,3 +511,31 @@ class Algorithm{
     return count;
   }
 }
+
+class F2l{
+  constructor(id, rubikCube, algorithms, type, probability) {
+    this.id = id;
+    this.rubikCube = rubikCube;
+    this.algorithms = algorithms;
+  }
+}
+
+class Oll{
+  constructor(id, rubikCube, algorithms, type, probability) {
+    this.id = id;
+    this.rubikCube = rubikCube;
+    this.algorithms = algorithms;
+    this.type = type;
+    this.probability = probability;
+  }
+}
+
+class PLL{
+  constructor(id, rubikCube, algorithms, type, probability) {
+    this.id = id;
+    this.rubikCube = rubikCube;
+    this.algorithms = algorithms;
+    this.type = type;
+    this.probability = probability;
+  }
+}
