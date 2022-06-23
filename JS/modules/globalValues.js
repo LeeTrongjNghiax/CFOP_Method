@@ -271,3 +271,243 @@ class RubikCube{
     }
   }
 }
+
+class Algorithm{
+  constructor(algorithm) {
+    this.algorithm = algorithm;
+  }
+
+  getHTM() {
+    let count = 0;
+    let moveArray = this.algorithm.split(" ");
+
+    for (let i = 0; i < moveArray.length; i++) {
+      if ( /^(U|D|F|B|R|L|U'|D'|F'|B'|R'|L')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(U2|D2|F2|B2|R2|L2|U2'|D2'|F2'|B2'|R2'|L2')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(u|d|f|b|r|l|u'|d'|f'|b'|r'|l')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(u2|d2|f2|b2|r2|l2|u2'|d2'|f2'|b2'|r2'|l2')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(M|E|S|M'|E'|S')$/i.test(moveArray[i]) ) 
+        count += 2;
+      if ( /^(M2|E2|S2|M2'|E2'|S2')$/i.test(moveArray[i]) ) 
+        count += 2;
+      if ( /^(x|y|z|x'|y'|z')$/i.test(moveArray[i]) ) 
+        count += 0;
+      if ( /^(x2|y2|z2|x2'|y2'|z2')$/i.test(moveArray[i]) ) 
+        count += 0;
+    }
+
+    return count;
+  }
+
+  getQTM() {
+    let count = 0;
+    let moveArray = this.algorithm.split(" ");
+
+    for (let i = 0; i < moveArray.length; i++) {
+      if ( /^(U|D|F|B|R|L|U'|D'|F'|B'|R'|L')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(U2|D2|F2|B2|R2|L2|U2'|D2'|F2'|B2'|R2'|L2')$/.test(moveArray[i]) ) 
+        count += 2;
+      if ( /^(u|d|f|b|r|l|u'|d'|f'|b'|r'|l')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(u2|d2|f2|b2|r2|l2|u2'|d2'|f2'|b2'|r2'|l2')$/.test(moveArray[i]) ) 
+        count += 2;
+      if ( /^(M|E|S|M'|E'|S')$/i.test(moveArray[i]) ) 
+        count += 2;
+      if ( /^(M2|E2|S2|M2'|E2'|S2')$/i.test(moveArray[i]) ) 
+        count += 4;
+      if ( /^(x|y|z|x'|y'|z')$/i.test(moveArray[i]) ) 
+        count += 0;
+      if ( /^(x2|y2|z2|x2'|y2'|z2')$/i.test(moveArray[i]) ) 
+        count += 0;
+    }
+
+    return count;
+  }
+
+  getSTM() {
+    let count = 0;
+    let moveArray = this.algorithm.split(" ");
+
+    for (let i = 0; i < moveArray.length; i++) {
+      if ( /^(U|D|F|B|R|L|U'|D'|F'|B'|R'|L')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(U2|D2|F2|B2|R2|L2|U2'|D2'|F2'|B2'|R2'|L2')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(u|d|f|b|r|l|u'|d'|f'|b'|r'|l')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(u2|d2|f2|b2|r2|l2|u2'|d2'|f2'|b2'|r2'|l2')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(M|E|S|M'|E'|S')$/i.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(M2|E2|S2|M2'|E2'|S2')$/i.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(x|y|z|x'|y'|z')$/i.test(moveArray[i]) ) 
+        count += 0;
+      if ( /^(x2|y2|z2|x2'|y2'|z2')$/i.test(moveArray[i]) ) 
+        count += 0;
+    }
+
+    return count;
+  }
+
+  getQSTM() {
+    let count = 0;
+    let moveArray = this.algorithm.split(" ");
+
+    for (let i = 0; i < moveArray.length; i++) {
+      if ( /^(U|D|F|B|R|L|U'|D'|F'|B'|R'|L')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(U2|D2|F2|B2|R2|L2|U2'|D2'|F2'|B2'|R2'|L2')$/.test(moveArray[i]) ) 
+        count += 2;
+      if ( /^(u|d|f|b|r|l|u'|d'|f'|b'|r'|l')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(u2|d2|f2|b2|r2|l2|u2'|d2'|f2'|b2'|r2'|l2')$/.test(moveArray[i]) ) 
+        count += 2;
+      if ( /^(M|E|S|M'|E'|S')$/i.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(M2|E2|S2|M2'|E2'|S2')$/i.test(moveArray[i]) ) 
+        count += 2;
+      if ( /^(x|y|z|x'|y'|z')$/i.test(moveArray[i]) ) 
+        count += 0;
+      if ( /^(x2|y2|z2|x2'|y2'|z2')$/i.test(moveArray[i]) ) 
+        count += 0;
+    }
+
+    return count;
+  }
+
+  getETM() {
+    let count = 0;
+    let moveArray = this.algorithm.split(" ");
+
+    for (let i = 0; i < moveArray.length; i++) {
+      if ( /^(U|D|F|B|R|L|U'|D'|F'|B'|R'|L')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(U2|D2|F2|B2|R2|L2|U2'|D2'|F2'|B2'|R2'|L2')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(u|d|f|b|r|l|u'|d'|f'|b'|r'|l')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(u2|d2|f2|b2|r2|l2|u2'|d2'|f2'|b2'|r2'|l2')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(M|E|S|M'|E'|S')$/i.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(M2|E2|S2|M2'|E2'|S2')$/i.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(x|y|z|x'|y'|z')$/i.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(x2|y2|z2|x2'|y2'|z2')$/i.test(moveArray[i]) ) 
+        count += 1;
+    }
+    
+    return count;
+  }
+
+  getATM() {
+    let count = 0;
+    let moveArray = this.algorithm.split(" ");
+
+    for (let i = 0; i < moveArray.length; i++) {
+      if ( /^(U|D|F|B|R|L|U'|D'|F'|B'|R'|L')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(U2|D2|F2|B2|R2|L2|U2'|D2'|F2'|B2'|R2'|L2')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(u|d|f|b|r|l|u'|d'|f'|b'|r'|l')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(u2|d2|f2|b2|r2|l2|u2'|d2'|f2'|b2'|r2'|l2')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(M|E|S|M'|E'|S')$/i.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(M2|E2|S2|M2'|E2'|S2')$/i.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(x|y|z|x'|y'|z')$/i.test(moveArray[i]) ) 
+        count += 0;
+      if ( /^(x2|y2|z2|x2'|y2'|z2')$/i.test(moveArray[i]) ) 
+        count += 0;
+    }
+
+    return count;
+  }
+
+  getPTM() {
+    let count = 0;
+    let moveArray = this.algorithm.split(" ");
+
+    for (let i = 0; i < moveArray.length; i++) {
+      if ( /^(U|D|F|B|R|L|U'|D'|F'|B'|R'|L')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(U2|D2|F2|B2|R2|L2|U2'|D2'|F2'|B2'|R2'|L2')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(u|d|f|b|r|l|u'|d'|f'|b'|r'|l')$/.test(moveArray[i]) ) 
+        count += 0;
+      if ( /^(u2|d2|f2|b2|r2|l2|u2'|d2'|f2'|b2'|r2'|l2')$/.test(moveArray[i]) ) 
+        count += 0;
+      if ( /^(M|E|S|M'|E'|S')$/i.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(M2|E2|S2|M2'|E2'|S2')$/i.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(x|y|z|x'|y'|z')$/i.test(moveArray[i]) ) 
+        count += 0;
+      if ( /^(x2|y2|z2|x2'|y2'|z2')$/i.test(moveArray[i]) ) 
+        count += 0;
+    }
+
+    return count;
+  }
+
+  getOBTM() {
+    let count = 0;
+    let moveArray = this.algorithm.split(" ");
+
+    for (let i = 0; i < moveArray.length; i++) {
+      if ( /^(U|D|F|B|R|L|U'|D'|F'|B'|R'|L')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(U2|D2|F2|B2|R2|L2|U2'|D2'|F2'|B2'|R2'|L2')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(u|d|f|b|r|l|u'|d'|f'|b'|r'|l')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(u2|d2|f2|b2|r2|l2|u2'|d2'|f2'|b2'|r2'|l2')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(M|E|S|M'|E'|S')$/i.test(moveArray[i]) ) 
+        count += 2;
+      if ( /^(M2|E2|S2|M2'|E2'|S2')$/i.test(moveArray[i]) ) 
+        count += 2;
+      if ( /^(x|y|z|x'|y'|z')$/i.test(moveArray[i]) ) 
+        count += 0;
+      if ( /^(x2|y2|z2|x2'|y2'|z2')$/i.test(moveArray[i]) ) 
+        count += 0;
+    }
+
+    return count;
+  }
+
+  getBTM() {
+    let count = 0;
+    let moveArray = this.algorithm.split(" ");
+
+    for (let i = 0; i < moveArray.length; i++) {
+      if ( /^(U|D|F|B|R|L|U'|D'|F'|B'|R'|L')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(U2|D2|F2|B2|R2|L2|U2'|D2'|F2'|B2'|R2'|L2')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(u|d|f|b|r|l|u'|d'|f'|b'|r'|l')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(u2|d2|f2|b2|r2|l2|u2'|d2'|f2'|b2'|r2'|l2')$/.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(M|E|S|M'|E'|S')$/i.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(M2|E2|S2|M2'|E2'|S2')$/i.test(moveArray[i]) ) 
+        count += 1;
+      if ( /^(x|y|z|x'|y'|z')$/i.test(moveArray[i]) ) 
+        count += 0;
+      if ( /^(x2|y2|z2|x2'|y2'|z2')$/i.test(moveArray[i]) ) 
+        count += 0;
+    }
+
+    return count;
+  }
+}
