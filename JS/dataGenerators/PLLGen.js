@@ -18,7 +18,7 @@ pllList.push(
       `y2 R' D' R U' R' D R U' R D' R U2 R' D R`,
       `y' R U R' F' r U R' U' r' F R2 U' R'`,
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "Ab", 
@@ -36,7 +36,7 @@ pllList.push(
       `R' D' R U R' D R U R' D' R U2 R' D R`,
       `y2 R' D' R U2 R' D R U R' D' R U R' D R`,
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "E", 
@@ -56,7 +56,7 @@ pllList.push(
       `R2 U R2 U D R2 U' R2 U R2 U' D' R2 U R2 U2 R2`,
       `y2 R2 U R2 U D R2 U' R2 U R2 U' D' R2 U R2 U2 R2`,
     ],
-    '/',
+    '1/36',
   ),
   new RubikCube(
     "F", 
@@ -69,9 +69,12 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `y R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R`,
+      `y2 R' U2 R' d' R' F' R2 U' R' U R' F R U' F`,
+      `y' L U F L' U' L U L F' L2 U L U L' U' L U' L'`,
+      `R' U R U' R2 F' U' F U R F R' F' R2`,
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "Ga", 
@@ -84,9 +87,13 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `R2 u R' U R' U' R u' R2 y' R' U R`,
+      `R2 U R' U R' U' R U' R2 D U' R' U R D'`,
+      `y R U R' F' R U R' U' R' F R U' R' F R2 U' R' U' R U R' F'`,
+      `y2 R U' R U R2 D R' U' R D' R' U2 R U' R' U' R2`,
+      `y' R U2 R' U' F' R U R2 U' R' F R U R2 U2 R'`
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "Gb", 
@@ -99,9 +106,11 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `R' U' R U D' R2 U R' U R U' R U' R2 D`,
+      `y R U R' F' r U R' U' r' F R F' R U R' U' R' F R2 U' R'`,
+      `y2 R' U2 R U' F R U R' U' R' F' U' R U R U' R'`,
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "Gc", 
@@ -114,9 +123,11 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `R2 U' R U' R U R' U R2 D' U R U' R' D`,
+      `y2 R2 F2 R U2 R U2 R' F R U R' U' R' F R2`,
+      `y' u R2 U' R U' R U R' U R2 D' U R U' R' D`
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "Gd", 
@@ -129,9 +140,11 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `R U R' U' D R2 U' R U' R' U R' U R2 D'`,
+      `D' R U R' U' D R2 U' R U' R' U R' U R2`,
+      `y R2 F' R U R U' R' F' R U2 R' U2 R' F2 R2`,
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "H", 
@@ -144,9 +157,16 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `M2 U M2 U2 M2 U M2`,
+      `y M2 U M2 U2 M2 U M2`,
+      `y2 M2 U M2 U2 M2 U M2`,
+      `y' M2 U M2 U2 M2 U M2`,
+      `M2 U' M2 U2 M2 U' M2`,
+      `y M2 U' M2 U2 M2 U' M2`,
+      `y2 M2 U' M2 U2 M2 U' M2`,
+      `y' M2 U' M2 U2 M2 U' M2`,
     ],
-    '/',
+    '1/72',
   ),
   new RubikCube(
     "Ja", 
@@ -159,9 +179,11 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `L' U' L F L' U' L U L F' L2 U L`,
+      `y R' U L' U2 R U' R' U2 R L`,
+      `y2 F U' R' F R2 U' R' U' R U R' F' R U R' F'`,
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "Jb", 
@@ -174,9 +196,13 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `R U R' F' R U R' U' R' F R2 U' R'`,
+      `R U2 R' U' R U2 L' U R' U' L`,
+      `R L U2 R' U' R U2 L' U R'`,
+      `y' L U' R U2 L' U L U2 R' L'`,
+      `y R U' L U2 R' U R U2 L' R'`,
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "Na", 
@@ -189,9 +215,20 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `r' D r U2 r' D r U2 r' D r U2 r' D r U2 r' D r U2`,
+      `y r' D r U2 r' D r U2 r' D r U2 r' D r U2 r' D r`,
+      `y2 r' D r U2 r' D r U2 r' D r U2 r' D r U2 r' D r`,
+      `y' r' D r U2 r' D r U2 r' D r U2 r' D r U2 r' D r`,
+      `R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'`,
+      `y R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'`,
+      `y2 R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'`,
+      `y' R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'`,
+      `L U' R U2 L' U R' L U' R U2 L' U R'`,
+      `y L U' R U2 L' U R' L U' R U2 L' U R'`,
+      `y2 L U' R U2 L' U R' L U' R U2 L' U R'`,
+      `y' L U' R U2 L' U R' L U' R U2 L' U R'`,
     ],
-    '/',
+    '1/72',
   ),
   new RubikCube(
     "Nb", 
@@ -204,9 +241,20 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `r D r' U2 r D r' U2 r D r' U2 r D r' U2 r D r' U2`,
+      `y r D r' U2 r D r' U2 r D r' U2 r D r' U2 r D r' U2`,
+      `y2 r D r' U2 r D r' U2 r D r' U2 r D r' U2 r D r' U2`,
+      `y' r D r' U2 r D r' U2 r D r' U2 r D r' U2 r D r' U2`,
+      `R' U R U' R' F' U' F R U R' F R' F' R U' R`,
+      `y R' U R U' R' F' U' F R U R' F R' F' R U' R`,
+      `y2 R' U R U' R' F' U' F R U R' F R' F' R U' R`,
+      `y' R' U R U' R' F' U' F R U R' F R' F' R U' R`,
+      `R' U L' U2 R U' L R' U L' U2 R U' L`,
+      `y R' U L' U2 R U' L R' U L' U2 R U' L`,
+      `y2 R' U L' U2 R U' L R' U L' U2 R U' L`,
+      `y' R' U L' U2 R U' L R' U L' U2 R U' L`,
     ],
-    '/',
+    '1/72',
   ),
   new RubikCube(
     "Ra", 
@@ -219,9 +267,11 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `y R U' R' U' R U R D R' U' R D' R' U2 R'`,
+      `y R U R' F' R U2 R' U2 R' F R U R U2 R'`,
+      `y2 R U2 R D R' U R D' R' U' R' U R U R'`,
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "Rb", 
@@ -234,9 +284,11 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `y R2 F R U R U' R' F' R U2 R' U2 R`,
+      `R' U2 R U2 R' F R U R' U' R' F' R2`,
+      `R' U2 R' D' R U' R' D R U R U' R' U' R`
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "T", 
@@ -249,9 +301,10 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `R U R' U' R' F R2 U' R' U' R U R' F'`,
+      `R2 U R2 U' R2 U' D R2 U' R2 U R2 D'`
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "Ua", 
@@ -264,9 +317,14 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `M2 U M' U2 M U M2`,
+      `R2 U' R' U' R U R U R U' R`,
+      `y M2 u' M' u2 M' u' M2`,
+      `y2 M2 U M U2 M' U M2`,
+      `y2 R U' R U R U R U' R' U' R2`,
+      `y' M2 u' M u2 M u' M2`,
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "Ub", 
@@ -279,9 +337,15 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `M2 U' M' U2 M U' M2`,
+      `R' U R' U' R' U' R' U R U R2`,
+      `y M2 U' M2 U2 M' U2 M' U M2`,
+      `y2 M2 U' M U2 M' U' M2`,
+      `y2 R2 U R U R' U' R' U' R' U R'`,
+      `y' M2 u M' u2 M' u M2`,
+      `y' M2 U' M2 U2 M' U2 M' U M2`,
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "V", 
@@ -294,9 +358,13 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `R' U R' U' y R' F' R2 U' R' U R' F R F`,
+      `R' U R' U' R D' R' D R' U D' R2 U' R2 D R2`,
+      `R U2 R' D R U' R U' R U R2 D R' U' R D2`,
+      `R2 D' R2 U R2 U' D R D' R D R' U R U' R`,
+      `y2 R U' R U R' D R D' R U' D R2 U R2 D' R2`
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "Y", 
@@ -309,9 +377,9 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `F R U' R' U' R U R' F' R U R' U' R' F R F'`,
     ],
-    '/',
+    '1/18',
   ),
   new RubikCube(
     "Z", 
@@ -324,9 +392,16 @@ pllList.push(
       d: [ [ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ] ],
     },
     [ 
-      ``,
+      `M' U' M2 U' M2 U' M' U2 M2`,
+      `y2 M' U' M2 U' M2 U' M' U2 M2`,
+      `M2 U M2 U M' U2 M2 U2 M'`,
+      `y2 M2 U M2 U M' U2 M2 U2 M'`,
+      `y M' U M2 U M2 U M' U2 M2`,
+      `y' M' U M2 U M2 U M' U2 M2`,
+      `y M2 U' M2 U' M' U2 M2 U2 M'`,
+      `y' M2 U' M2 U' M' U2 M2 U2 M'`,
     ],
-    '/',
+    '1/36',
   ),
 )
 
