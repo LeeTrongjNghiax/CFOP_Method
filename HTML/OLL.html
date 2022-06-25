@@ -8,11 +8,17 @@
 
   <script src="../JS/libraries/jquery-3.6.0.min.js"></script>
   <script src="../JS/libraries/bootstrap.js"></script>
+
   <script src="../JS/backendModules/drawCube.js"></script>  
   <script src="../JS/backendModules/drawSquare.js"></script>  
   <script src="../JS/backendModules/createSelector.js"></script>
   <script src="../JS/backendModules/globalValues.js"></script>
   <script src="../JS/backendModules/numberToColor.js"></script>
+
+  <script src="../JS/frontendModules/OLL/rotateColorScheme.js"></script>
+  <script src="../JS/frontendModules/OLL/rotateImage.js"></script>
+  <script src="../JS/frontendModules/OLL/turnColor.js"></script>
+  <script src="../JS/frontendModules/OLL/turnU.js"></script>
   
   <link rel="stylesheet" href="../CSS/bootstrap.css">
 
@@ -72,64 +78,6 @@
       </tbody>
     </table>
   </div>
-  <script>
-    function filterType() { 
-      table = document.querySelector("table > tbody");
-      tr = table.getElementsByTagName("tr");
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[5];
-        if (td) {
-          txtValue = td.textContent || td.innerText;
-
-          let t = document.querySelector('select').options[
-            document.querySelector('select').selectedIndex
-          ].value;
-
-          if (txtValue == t) {
-            tr[i].style.display = "";
-          } else if ( t == `all` ) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
-        }
-      }
-    }
-
-    function rotateImage(tag) {
-      let tr = tag.parentElement.parentElement;
-      let id = tr.querySelector("td:first-child").textContent.replace("OLL ", "");
-
-      if (/y$/.test(tag.textContent)) {
-        ollList[id - 1].y();
-      } else if (/y'$/.test(tag.textContent)) {
-        ollList[id - 1].yPrime();
-      }
-
-      tr.replaceChild(document.createElement("td"), tr.children[1]);
-      tr.querySelector("td:nth-child(2)").innerHTML += drawSquare(ollList[id - 1]);
-      tr.replaceChild(document.createElement("td"), tr.children[2]);
-      tr.querySelector("td:nth-child(3)").innerHTML += drawCube(ollList[id - 1]);
-
-      let regex;
-      switch (Math.abs(ollList[id - 1].rotateCount) % 4) {
-        case 1:
-          regex = /^y /;
-          break;
-        case 2:
-          regex = /^y2 /;
-          break;
-        case 3:
-          regex = /^y' /;
-          break;
-        default:
-          regex = /[^y]/;
-      }
-      let selector = createSelector(ollList[id - 1], regex);
-      tr.replaceChild(document.createElement("td"), tr.children[4]);
-      tr.querySelector("td:nth-child(5)").innerHTML += selector;
-    }
-  </script>
-  <script src="../JS/OLLGen.js"></script>
+  <script src="../JS/dataGenerators/OLLGen.js"></script>
 </body>
 </html>

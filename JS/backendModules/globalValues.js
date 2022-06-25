@@ -287,6 +287,7 @@ class RubikCube{
     this.corner = corner;
     this.edge = edge;
     this.rotateCount = 0;
+    this.toggle2LayerColorsCount = 0;
   }
   x() {
     let n = this.faces.r.length;
@@ -460,6 +461,44 @@ class RubikCube{
     this.rotateCount--;
     if (this.rotateCount == 4) this.rotateCount = 0;
   }
+  U() {
+    let n = this.faces.u.length;
+    let x = Math.floor(n / 2);
+    let y = n - 1;
+    let t = [ [], [], [] ];
+
+    for (let i = 0; i<n/2; i++) {
+      for (let j = i; j<n-i-1; j++) {
+        var tmp = this.faces.u[i][j];
+        this.faces.u[i][j] = this.faces.u[n-j-1][i];
+        this.faces.u[n-j-1][i] = this.faces.u[n-i-1][n-j-1];
+        this.faces.u[n-i-1][n-j-1] = this.faces.u[j][n-i-1];
+        this.faces.u[j][n-i-1] = tmp;
+      }
+    }
+
+    for (let i = 0; i < n; i++) {
+      t[0][i] = this.faces.f[0][i];
+    }
+
+    for (let i = 0; i < n; i++) {
+      this.faces.f[0][i] = this.faces.r[0][i];
+    }
+
+    for (let i = 0; i < n; i++) {
+      this.faces.r[0][i] = this.faces.b[0][i];
+    }
+
+    for (let i = 0; i < n; i++) {
+      this.faces.b[0][i] = this.faces.l[0][i];
+    }
+
+    for (let i = 0; i < n; i++) {
+      this.faces.l[0][i] = t[0][i];
+    }
+
+    this.rotateCount++;
+  }
   rotateColorScheme() {
     for (const face in this.faces) {
       for (let i = 0; i < this.faces[face].length; i++) {
@@ -480,6 +519,35 @@ class RubikCube{
           }
         }
       }
+    }
+  }
+  toggle2LayerColors(mode) {
+    switch (mode) {
+      case "on":
+        for (const face in this.faces) {
+          for (let i = 1; i < this.faces[face].length; i++) {
+            for (let j = 0; j < this.faces[face][i].length; j++) {
+              if (face == "f") this.faces[face][i][j] = 3;
+              if (face == "r") this.faces[face][i][j] = 6;
+              if (face == "b") this.faces[face][i][j] = 4;
+              if (face == "l") this.faces[face][i][j] = 5;
+            }
+          }
+        }
+        this.toggle2LayerColorsCount++;
+        break;
+      case "off":
+        for (const face in this.faces) {
+          for (let i = 1; i < this.faces[face].length; i++) {
+            for (let j = 0; j < this.faces[face][i].length; j++) {
+              if (face != "u" && face != "d") {
+                this.faces[face][i][j] = 0;
+              }
+            }
+          }
+        }
+        this.toggle2LayerColorsCount++;
+        break;
     }
   }
 }

@@ -8,10 +8,14 @@
 
   <script src="../JS/libraries/jquery-3.6.0.min.js"></script>
   <script src="../JS/libraries/bootstrap.js"></script>
+
   <script src="../JS/backendModules/drawCube.js"></script>
   <script src="../JS/backendModules/createSelector.js"></script>
   <script src="../JS/backendModules/globalValues.js"></script>
   <script src="../JS/backendModules/numberToColor.js"></script>
+
+  <script src="../JS/frontendModules/F2L/rotateImage.js"></script>
+  <script src="../JS/frontendModules/F2L/rotateColorScheme.js"></script>
   
   <link rel="stylesheet" href="../CSS/bootstrap.css">
 
@@ -346,8 +350,9 @@
     //     }
     //   }
     // }
+  </script>
 
-    function rotateColorScheme(tag) {
+    <!-- function rotateColorScheme(tag) {
       let tr = tag.parentElement.parentElement;
       let name = tr.querySelector("td:first-child").textContent;
       let f2l = f2lList.find(elem => elem.id == name);
@@ -389,7 +394,7 @@
       tr.replaceChild(document.createElement("td"), tr.children[3]);
       tr.querySelector("td:nth-child(4)").innerHTML += selector;
     }
-  </script>
-  <script src="../JS/F2LGen.js"></script>
+  </script> -->
+  <script src="../JS/dataGenerators/F2LGen.js"></script>
 </body>
 </html>

@@ -15,11 +15,10 @@
   <script src="../JS/backendModules/globalValues.js"></script>
   <script src="../JS/backendModules/numberToColor.js"></script>
 
-  <script src="../JS/frontendModules/filterType.js"></script>
-  <script src="../JS/frontendModules/rotateColorScheme.js"></script>
-  <script src="../JS/frontendModules/rotateImage.js"></script>
-  <script src="../JS/frontendModules/turnColor.js"></script>
-  <script src="../JS/frontendModules/turnU.js"></script>
+  <script src="../JS/frontendModules/PLL/rotateColorScheme.js"></script>
+  <script src="../JS/frontendModules/PLL/rotateImage.js"></script>
+  <script src="../JS/frontendModules/PLL/turnColor.js"></script>
+  <script src="../JS/frontendModules/PLL/turnU.js"></script>
   
   <link rel="stylesheet" href="../CSS/bootstrap.css">
 
@@ -58,125 +57,6 @@
       </tbody>
     </table>
   </div>
-  <script>
-    function filterType() { 
-      table = document.querySelector("table > tbody");
-      tr = table.getElementsByTagName("tr");
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[5];
-        if (td) {
-          txtValue = td.textContent || td.innerText;
-
-          let t = document.querySelector('select').options[
-            document.querySelector('select').selectedIndex
-          ].value;
-
-          if (txtValue == t) {
-            tr[i].style.display = "";
-          } else if ( t == `all` ) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
-        }
-      }
-    }
-
-    function rotateImage(tag) {
-      let tr = tag.parentElement.parentElement;
-      let name = tr.querySelector("td:first-child").textContent.replace("OLL ", "");
-      let pll = pllList.find(elem => elem.id == name);
-
-      if (/y$/.test(tag.textContent)) {
-        pll.y();
-      } else if (/y'$/.test(tag.textContent)) {
-        pll.yPrime();
-      }
-
-      tr.replaceChild(document.createElement("td"), tr.children[1]);
-      tr.querySelector("td:nth-child(2)").innerHTML += drawSquare(pll);
-      tr.replaceChild(document.createElement("td"), tr.children[2]);
-      tr.querySelector("td:nth-child(3)").innerHTML += drawCube(pll);
-
-      let regex;
-      switch (Math.abs(pll.rotateCount) % 4) {
-        case 1:
-          regex = /^y /;
-          break;
-        case 2:
-          regex = /^y2 /;
-          break;
-        case 3:
-          regex = /^y' /;
-          break;
-        default:
-          regex = /[^y]/;
-      }
-      let selector = createSelector(pll, regex);
-      tr.replaceChild(document.createElement("td"), tr.children[4]);
-      tr.querySelector("td:nth-child(5)").innerHTML += selector;
-    }
-
-    function rotateColorScheme(tag) {
-      let tr = tag.parentElement.parentElement;
-      let name = tr.querySelector("td:first-child").textContent.replace("OLL ", "");
-      let pll = pllList.find(elem => elem.id == name);
-
-      pll.rotateColorScheme();
-
-      tr.replaceChild(document.createElement("td"), tr.children[1]);
-      tr.querySelector("td:nth-child(2)").innerHTML += drawSquare(pll);
-      tr.replaceChild(document.createElement("td"), tr.children[2]);
-      tr.querySelector("td:nth-child(3)").innerHTML += drawCube(pll);
-    }
-
-    function turnColor(tag) {
-      let tr = tag.parentElement.parentElement;
-      let name = tr.querySelector("td:first-child").textContent.replace("OLL ", "");
-      let pll = pllList.find(elem => elem.id == name);
-
-      if (pll.toggle2LayerColorsCount % 2 == 0)
-        pll.toggle2LayerColors("on");
-      else
-        pll.toggle2LayerColors("off");
-
-      tr.replaceChild(document.createElement("td"), tr.children[1]);
-      tr.querySelector("td:nth-child(2)").innerHTML += drawSquare(pll);
-      tr.replaceChild(document.createElement("td"), tr.children[2]);
-      tr.querySelector("td:nth-child(3)").innerHTML += drawCube(pll);
-    }
-
-    function turnU(tag) {
-      let tr = tag.parentElement.parentElement;
-      let name = tr.querySelector("td:first-child").textContent.replace("OLL ", "");
-      let pll = pllList.find(elem => elem.id == name);
-
-      pll.U();
-
-      tr.replaceChild(document.createElement("td"), tr.children[1]);
-      tr.querySelector("td:nth-child(2)").innerHTML += drawSquare(pll);
-      tr.replaceChild(document.createElement("td"), tr.children[2]);
-      tr.querySelector("td:nth-child(3)").innerHTML += drawCube(pll);
-
-      let regex;
-      switch (Math.abs(pll.rotateCount) % 4) {
-        case 1:
-          regex = /^y /;
-          break;
-        case 2:
-          regex = /^y2 /;
-          break;
-        case 3:
-          regex = /^y' /;
-          break;
-        default:
-          regex = /[^y]/;
-      }
-      let selector = createSelector(pll, regex);
-      tr.replaceChild(document.createElement("td"), tr.children[4]);
-      tr.querySelector("td:nth-child(5)").innerHTML += selector;
-    }
-  </script>
-  <script src="../JS/PLLGen.js"></script>
+  <script src="../JS/dataGenerators/PLLGen.js"></script>
 </body>
 </html>
