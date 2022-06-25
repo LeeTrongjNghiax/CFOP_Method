@@ -2102,12 +2102,12 @@ for (let i = 0; i < f2lList.length; i++) {
       <td>${f2lList[i].id}</td>
       <td>${drawCube(f2lList[i])}</td>
       <td>
-        <button onclick="rotateImage(this)">Rotate y1 /button>
+        <button onclick="rotateImage(this)">Rotate y</button>
         <br>
         <button onclick="rotateColorScheme(this)">Rotate Color Scheme</button>
         <br>
       </td>
-      <td>${createSelector(f2lList[i], /[^y1 ]/)}</td>
+      <td>${createSelector(f2lList[i], /[^y]/)}</td>
     </tr>
   `;
 }

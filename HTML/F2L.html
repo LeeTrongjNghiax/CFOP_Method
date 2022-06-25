@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>F2L Method</title>
 
-  <script src="../JS/jquery-3.6.0.min.js"></script>
-  <script src="../JS/bootstrap.js"></script>
-  <script src="../JS/modules/drawCube.js"></script>
-  <script src="../JS/modules/createSelector.js"></script>
-  <script src="../JS/modules/globalValues.js"></script>
-  <script src="../JS/modules/numberToColor.js"></script>
+  <script src="../JS/libraries/jquery-3.6.0.min.js"></script>
+  <script src="../JS/libraries/bootstrap.js"></script>
+  <script src="../JS/backendModules/drawCube.js"></script>
+  <script src="../JS/backendModules/createSelector.js"></script>
+  <script src="../JS/backendModules/globalValues.js"></script>
+  <script src="../JS/backendModules/numberToColor.js"></script>
   
   <link rel="stylesheet" href="../CSS/bootstrap.css">
 
@@ -35,14 +35,14 @@
   
 </head>
 <body>
-  <script>
+  <!-- <script>
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
       // document.getElementById("txtHint").innerHTML = this.responseText;
     }
     xhttp.open("GET", "PHP/getF2LRubikCube.php");
     xhttp.send();
-  </script>
+  </script> -->
   
   <div class="container">
     <div class="row">
@@ -352,8 +352,6 @@
       let name = tr.querySelector("td:first-child").textContent;
       let f2l = f2lList.find(elem => elem.id == name);
 
-      console.log(f2l)
-
       f2l.rotateColorScheme();
 
       tr.replaceChild(document.createElement("td"), tr.children[1]);
@@ -363,8 +361,6 @@
     function rotateImage(tag) {
       let tr = tag.parentElement.parentElement;
       let id = tr.querySelector("td:first-child").textContent.replace("OLL ", "");
-
-      console.log(tag.textContent);
 
       if (/y$/.test(tag.textContent)) {
         f2lList[id - 1].y();
