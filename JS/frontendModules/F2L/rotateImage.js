@@ -4,16 +4,16 @@ function rotateImage(tag) {
   let f2l = f2lList.find(elem => elem.id == name);
 
   if (/y$/.test(tag.textContent)) {
-    f2l.y();
+    f2l.rubikCube.y();
   } else if (/y'$/.test(tag.textContent)) {
-    f2l.yPrime();
+    f2l.rubikCube.yPrime();
   }
 
   tr.replaceChild(document.createElement("td"), tr.children[1]);
   tr.querySelector("td:nth-child(2)").innerHTML += drawCube(f2l);
 
   let regex;
-  switch (Math.abs(f2l.rotateCount) % 4) {
+  switch (Math.abs(f2l.rubikCube.rotateCount) % 4) {
     case 1:
       regex = /^y /;
       break;

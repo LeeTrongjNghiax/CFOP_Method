@@ -4,9 +4,9 @@ function rotateImage(tag) {
   let oll = ollList.find(elem => elem.id == name);
 
   if (/y$/.test(tag.textContent)) {
-    oll.y();
+    oll.rubikCube.y();
   } else if (/y'$/.test(tag.textContent)) {
-    oll.yPrime();
+    oll.rubikCube.yPrime();
   }
 
   tr.replaceChild(document.createElement("td"), tr.children[1]);
@@ -15,7 +15,7 @@ function rotateImage(tag) {
   tr.querySelector("td:nth-child(3)").innerHTML += drawCube(oll);
 
   let regex;
-  switch (Math.abs(oll.rotateCount) % 4) {
+  switch (Math.abs(oll.rubikCube.rotateCount) % 4) {
     case 1:
       regex = /^y /;
       break;

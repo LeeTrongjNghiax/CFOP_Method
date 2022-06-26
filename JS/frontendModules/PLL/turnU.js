@@ -3,7 +3,7 @@ function turnU(tag) {
   let name = tr.querySelector("td:first-child").textContent.replace("OLL ", "");
   let pll = pllList.find(elem => elem.id == name);
 
-  pll.U();
+  pll.rubikCube.U();
 
   tr.replaceChild(document.createElement("td"), tr.children[1]);
   tr.querySelector("td:nth-child(2)").innerHTML += drawSquare(pll);
@@ -11,7 +11,7 @@ function turnU(tag) {
   tr.querySelector("td:nth-child(3)").innerHTML += drawCube(pll);
 
   let regex;
-  switch (Math.abs(pll.rotateCount) % 4) {
+  switch (Math.abs(pll.rubikCube.rotateCount) % 4) {
     case 1:
       regex = /^y /;
       break;
