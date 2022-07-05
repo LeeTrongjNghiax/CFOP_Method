@@ -39,15 +39,6 @@
   
 </head>
 <body>
-  <!-- <script>
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-      // document.getElementById("txtHint").innerHTML = this.responseText;
-    }
-    xhttp.open("GET", "PHP/getF2LRubikCube.php");
-    xhttp.send();
-  </script> -->
-  
   <div class="container">
     <div class="row">
       <div class="col-md-1">
@@ -352,49 +343,6 @@
     // }
   </script>
 
-    <!-- function rotateColorScheme(tag) {
-      let tr = tag.parentElement.parentElement;
-      let name = tr.querySelector("td:first-child").textContent;
-      let f2l = f2lList.find(elem => elem.id == name);
-
-      f2l.rotateColorScheme();
-
-      tr.replaceChild(document.createElement("td"), tr.children[1]);
-      tr.querySelector("td:nth-child(2)").innerHTML += drawCube(f2l);
-    }
-
-    function rotateImage(tag) {
-      let tr = tag.parentElement.parentElement;
-      let id = tr.querySelector("td:first-child").textContent.replace("OLL ", "");
-
-      if (/y$/.test(tag.textContent)) {
-        f2lList[id - 1].y();
-      } else if (/y'$/.test(tag.textContent)) {
-        f2lList[id - 1].yPrime();
-      }
-
-      tr.replaceChild(document.createElement("td"), tr.children[1]);
-      tr.querySelector("td:nth-child(2)").innerHTML += drawCube(f2lList[id - 1]);
-
-      let regex;
-      switch (Math.abs(f2lList[id - 1].rotateCount) % 4) {
-        case 1:
-          regex = /^y /;
-          break;
-        case 2:
-          regex = /^y2 /;
-          break;
-        case 3:
-          regex = /^y' /;
-          break;
-        default:
-          regex = /[^y]/;
-      }
-      let selector = createSelector(f2lList[id - 1], regex);
-      tr.replaceChild(document.createElement("td"), tr.children[3]);
-      tr.querySelector("td:nth-child(4)").innerHTML += selector;
-    }
-  </script> -->
   <script src="../JS/dataGenerators/F2LGen.js"></script>
 </body>
 </html>
