@@ -393,12 +393,12 @@ pllList.push(
     },
     [ 
       `M' U' M2 U' M2 U' M' U2 M2`,
-      `y2 M' U' M2 U' M2 U' M' U2 M2`,
       `M2 U M2 U M' U2 M2 U2 M'`,
-      `y2 M2 U M2 U M' U2 M2 U2 M'`,
       `y M' U M2 U M2 U M' U2 M2`,
-      `y' M' U M2 U M2 U M' U2 M2`,
       `y M2 U' M2 U' M' U2 M2 U2 M'`,
+      `y2 M' U' M2 U' M2 U' M' U2 M2`,
+      `y2 M2 U M2 U M' U2 M2 U2 M'`,
+      `y' M' U M2 U M2 U M' U2 M2`,
       `y' M2 U' M2 U' M' U2 M2 U2 M'`,
     ],
     '1/36',
@@ -411,6 +411,7 @@ for (let i = 0; i < pllList.length; i++) {
       <td>${pllList[i].id}</td>
       <td>${drawSquare(pllList[i])}</td>
       <td>${drawCube(pllList[i])}</td>
+      <td>${createSelector(pllList[i], /[^y]/)}</td>
       <td>
         <button onclick="turnU(this)">Turn U</button>
         <br>
@@ -420,8 +421,6 @@ for (let i = 0; i < pllList.length; i++) {
         <br>
         <button onclick="turnColor(this)">Turn on/off 2 Layers Color</button>
       </td>
-      <td>${createSelector(pllList[i], /[^y]/)}</td>
-      <td>${pllList[i].probability}</td>
     </tr>
   `;
 }

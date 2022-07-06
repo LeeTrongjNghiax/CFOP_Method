@@ -1127,6 +1127,7 @@ f2lList.push(
     [ 
       `R2 U R2' U' R2`,
       `U' R' U R2 U' R'`,
+      `y U' M F2 M'`,
       `y U' R U' R' U2 | L' U L |`,
       `y2 U' L' U L2 U' L'`,
       `y2 L2 U L2' U' L2`,
@@ -1154,12 +1155,13 @@ f2lList.push(
       l: [ [ 0, 0, 0 ], [ 6, 6, 5 ], [ 6, 6, 0 ] ],
     },
     [ 
+      `U M F2 M'`,
       `U L' U L U2 | R U' R' |`,
       `y U L U' L2' U R`,
       `y L2 U' L2' U L2`,
       `y2 U R' U R U2 | L U' L' |`,
       `y' U R U' R2' U R`,
-      `y R2' U' R2 U R2'`,
+      `y' R2' U' R2 U R2'`,
     ],
     {
       u: 1, d: 0,
@@ -2193,7 +2195,10 @@ f2lList.push(
       l: [ [ 0, 0, 0 ], [ 3, 3, 4 ], [ 3, 3, 0 ] ],
     },
     [ 
-      ``,
+      `L2' u' L2 u L2'`,
+      `y L2' u L2 u' L2'`,
+      `y2 R2 u' R2' u R2`,
+      `y' R2 u R2' u' R2`,
     ],
     {
       u: 1, d: 0,
@@ -2217,7 +2222,10 @@ f2lList.push(
       l: [ [ 0, 0, 0 ], [ 3, 3, 5 ], [ 3, 3, 0 ] ],
     },
     [ 
-      ``,
+      `L' u' L U L' u L`,
+      `y L u L' U' L u' L'`,
+      `y2 R' u' R U R' u R`,
+      `y' R u R' U' R u' R'`,
     ],
     {
       u: 1, d: 0,
@@ -2241,7 +2249,11 @@ f2lList.push(
       l: [ [ 0, 0, 0 ], [ 6, 6, 4 ], [ 6, 6, 4 ] ],
     },
     [ 
-      ``,
+      `R' F R2 U' R2' F' R`,
+      `L F' L2' U' L2 F L'`,
+      `y f' L' f U' L' U L`,
+      `y2 (f R f') (L U2 L')`,
+      `y' R U R' U' f R' f'`,
     ],
     {
       u: 1, d: 0,
@@ -2265,7 +2277,11 @@ f2lList.push(
       l: [ [ 0, 0, 0 ], [ 6, 6, 6 ], [ 6, 6, 6 ] ],
     },
     [ 
-      ``,
+      `f R f' U R U' R'`,
+      `y L F' L2' U L2 F L'`,
+      `y R' F R2 U R2' F' R`,      
+      `y2 L' U' L U f' L f`,
+      `y' f' L' f R' U2' R`,
     ],
     {
       u: 1, d: 0,
@@ -2289,7 +2305,10 @@ f2lList.push(
       l: [ [ 0, 0, 0 ], [ 0, 5, 5 ], [ 0, 5, 5 ] ],
     },
     [ 
-      ``,
+      `R (L U2 L') R'`,
+      `y L' (R' U2 R) L`,
+      `y2 L (R U2 R') L'`,
+      `y' R' (L' U2 L) R`,
     ],
     {
       u: 1, d: 0,
@@ -2313,7 +2332,9 @@ f2lList.push(
       l: [ [ 0, 0, 0 ], [ 6, 6, 0 ], [ 6, 6, 5 ] ],
     },
     [ 
-      ``,
+      `L F2' L' F U' F`,
+      `L F' L' U' F U' | R U R' |`,
+      `y L U' F' L' F L' U L`
     ],
     {
       u: 1, d: 0,
@@ -2337,7 +2358,9 @@ f2lList.push(
       l: [ [ 0, 0, 0 ], [ 6, 6, 6 ], [ 6, 6, 6 ] ],
     },
     [ 
-      ``,
+      `R' U F R F' | R U' R' |`,
+      `y R' F2 R F' U F'`,
+      `y R' F R U F' U | L' U' L |`,
     ],
     {
       u: 1, d: 0,
@@ -2361,7 +2384,7 @@ f2lList.push(
       l: [ [ 0, 0, 0 ], [ 6, 6, 0 ], [ 6, 6, 1 ] ],
     },
     [ 
-      ``,
+      `R' F R U' F' | R U' R' |`,
     ],
     {
       u: 1, d: 0,
@@ -2385,7 +2408,7 @@ f2lList.push(
       l: [ [ 0, 0, 0 ], [ 6, 6, 6 ], [ 6, 6, 6 ] ],
     },
     [ 
-      ``,
+      `y L F' L' U F | L' U L |`,
     ],
     {
       u: 1, d: 0,
@@ -2409,7 +2432,8 @@ f2lList.push(
       l: [ [ 0, 0, 0 ], [ 6, 6, 0 ], [ 6, 6, 4 ] ],
     },
     [ 
-      ``,
+      `L' U L M' U R U' M U' R'`,
+      `y2 R' U R M U L U' M' U' L'`,
     ],
     {
       u: 1, d: 0,
@@ -2433,7 +2457,8 @@ f2lList.push(
       l: [ [ 0, 0, 0 ], [ 6, 6, 6 ], [ 6, 6, 6 ] ],
     },
     [ 
-      ``,
+      `y R U' R' M' U' L' U M U L`,
+      `y' L U' L' M U' R' U M' U R`,
     ],
     {
       u: 1, d: 0,
@@ -2453,13 +2478,13 @@ for (let i = 0; i < f2lList.length; i++) {
     <tr>
       <td>${f2lList[i].id}</td>
       <td>${drawCube(f2lList[i])}</td>
+      <td>${createSelector(f2lList[i], /[^y]/)}</td>
       <td>
         <button onclick="rotateImage(this)">Rotate y</button>
         <br>
         <button onclick="rotateColorScheme(this)">Rotate Color Scheme</button>
         <br>
       </td>
-      <td>${createSelector(f2lList[i], /[^y]/)}</td>
     </tr>
   `;
 }

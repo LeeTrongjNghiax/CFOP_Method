@@ -27,6 +27,6 @@ function rotateImage(tag) {
       regex = /[^y]/;
   }
   let selector = createSelector(f2l, regex);
-  tr.replaceChild(document.createElement("td"), tr.children[3]);
-  tr.querySelector("td:nth-child(4)").innerHTML += selector;
+  tr.replaceChild(document.createElement("td"), tr.children[2]);
+  tr.querySelector("td:nth-child(3)").innerHTML += selector;
 }

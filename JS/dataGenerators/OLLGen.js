@@ -839,13 +839,11 @@ for (let i = 0; i < ollList.length; i++) {
       <td>OLL ${ollList[i].id}</td>
       <td>${drawSquare(ollList[i])}</td>
       <td>${drawCube(ollList[i])}</td>
+      <td>${createSelector(ollList[i], /[^y]/)}</td>
       <td>
         <button onclick="rotateImage(this)">Rotate y</button>
         <button onclick="turnColor(this)">Turn on/off 2 Layers Color</button>
       </td>
-      <td>${createSelector(ollList[i], /[^y]/)}</td>
-      <td>${ollList[i].probability}</td>
-      <td>${ollList[i].type}</td>
     </tr>
   `;
 }
