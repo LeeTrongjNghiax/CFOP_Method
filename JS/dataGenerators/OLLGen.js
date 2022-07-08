@@ -844,6 +844,9 @@ for (let i = 0; i < ollList.length; i++) {
         <button onclick="rotateImage(this)">Rotate y</button>
         <button onclick="turnColor(this)">Turn on/off 2 Layers Color</button>
       </td>
+      <td>
+        .
+      </td>
     </tr>
   `;
 }

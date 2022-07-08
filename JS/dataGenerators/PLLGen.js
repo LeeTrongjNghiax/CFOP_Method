@@ -413,13 +413,13 @@ for (let i = 0; i < pllList.length; i++) {
       <td>${drawCube(pllList[i])}</td>
       <td>${createSelector(pllList[i], /[^y]/)}</td>
       <td>
-        <button onclick="turnU(this)">Turn U</button>
+        <button onclick="turnU(this)">U</button>
         <br>
-        <button onclick="rotateImage(this)">Rotate y</button>
+        <button onclick="rotateImage(this)">y</button>
         <br>
         <button onclick="rotateColorScheme(this)">Rotate Color Scheme</button>
         <br>
-        <button onclick="turnColor(this)">Turn on/off 2 Layers Color</button>
+        <button onclick="turnColor(this)">On/Off 2 Layers Color</button>
       </td>
     </tr>
   `;
