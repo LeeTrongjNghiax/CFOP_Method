@@ -415,6 +415,8 @@ for (let i = 0; i < pllList.length; i++) {
       <td>
         <button onclick="turnU(this)">U</button>
         <br>
+        <button onclick="turnU(this)">R</button>
+        <br>
         <button onclick="rotateImage(this)">y</button>
         <br>
         <button onclick="rotateColorScheme(this)">Rotate Color Scheme</button>

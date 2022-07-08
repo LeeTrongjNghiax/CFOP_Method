@@ -289,90 +289,6 @@ class RubikCube{
     this.rotateCount = 0;
     this.toggle2LayerColorsCount = 0;
   }
-  x() {
-    let n = this.faces.r.length;
-    let x = Math.floor(n / 2);
-    let y = n - 1;
-    let t = [ [], [], [] ];
-
-    for (let i = 0; i<n/2; i++) {
-      for (let j = i; j<n-i-1; j++) {
-        var tmp = this.faces.r[i][j];
-        this.faces.r[i][j] = this.faces.r[n-j-1][i];
-        this.faces.r[n-j-1][i] = this.faces.r[n-i-1][n-j-1];
-        this.faces.r[n-i-1][n-j-1] = this.faces.r[j][n-i-1];
-        this.faces.r[j][n-i-1] = tmp;
-      }
-    }
-
-    for (let i = 0; i < n; i++) {
-      for (let j = 0; j < n; j++) {
-        t[i][j] = this.faces.f[i][j];
-      }
-    }
-    for (let i = 0; i < n; i++) {
-      for (let j = 0; j < n; j++) {
-        this.faces.f[i][j] = this.faces.d[i][j];
-      }
-    }
-    for (let i = 0; i < n; i++) {
-      for (let j = 0; j < n; j++) {
-        this.faces.d[i][j] = this.faces.b[i][j];
-      }
-    }
-    for (let i = 0; i < n; i++) {
-      for (let j = 0; j < n; j++) {
-        this.faces.b[i][j] = this.faces.u[i][j];
-      }
-    }
-    for (let i = 0; i < n; i++) {
-      for (let j = 0; j < n; j++) {
-        this.faces.u[i][j] = t[i][j];
-      }
-    }
-  }
-  xPrime() {
-    let n = this.faces.u.length;
-    let x = Math.floor(n / 2);
-    let y = n - 1;
-    let t = [ [], [], [] ];
-
-    for (let i = 0; i < n/2; i++) {
-      for (let j = i; j < n-i-1; j++) {
-        var tmp = this.faces.r[i][j];
-        this.faces.r[i][j] = this.faces.r[j][n-i-1];
-        this.faces.r[j][n-i-1] = this.faces.r[n-i-1][n-j-1];
-        this.faces.r[n-i-1][n-j-1] = this.faces.r[n-j-1][i];
-        this.faces.r[n-j-1][i] = tmp;
-      }
-    }
-
-    for (let i = 0; i < n; i++) {
-      for (let j = 0; j < n; j++) {
-        t[i][j] = this.faces.f[i][j];
-      }
-    }
-    for (let i = 0; i < n; i++) {
-      for (let j = 0; j < n; j++) {
-        this.faces.f[i][j] = this.faces.u[i][j];
-      }
-    }
-    for (let i = 0; i < n; i++) {
-      for (let j = 0; j < n; j++) {
-        this.faces.u[i][j] = this.faces.b[i][j];
-      }
-    }
-    for (let i = 0; i < n; i++) {
-      for (let j = 0; j < n; j++) {
-        this.faces.b[i][j] = this.faces.d[i][j];
-      }
-    }
-    for (let i = 0; i < n; i++) {
-      for (let j = 0; j < n; j++) {
-        this.faces.d[i][j] = t[i][j];
-      }
-    }
-  }
   y() {
     let n = this.faces.u.length;
     let x = Math.floor(n / 2);
@@ -498,6 +414,51 @@ class RubikCube{
     }
 
     this.rotateCount++;
+  }
+  R() {
+    let n = this.faces.u.length;
+    let x = Math.floor(n / 2);
+    let y = n - 1;
+    let t = [ [], [], [] ];
+
+    for (let i = 0; i<n/2; i++) {
+      for (let j = i; j<n-i-1; j++) {
+        var tmp = this.faces.r[i][j];
+        this.faces.r[i][j] = this.faces.r[n-j-1][i];
+        this.faces.r[n-j-1][i] = this.faces.r[n-i-1][n-j-1];
+        this.faces.r[n-i-1][n-j-1] = this.faces.r[j][n-i-1];
+        this.faces.r[j][n-i-1] = tmp;
+      }
+    }
+
+    // T -> U
+    for (let i = 0; i < n; i++) {
+      t[i][2] = this.faces.u[i][2];
+    }
+
+    // U -> F
+    for (let i = 0; i < n; i++) {
+      this.faces.u[i][2] = this.faces.f[i][2];
+    }
+
+    // F -> D
+    this.faces.f[0][2] = this.faces.d[2][2];
+    this.faces.f[1][2] = this.faces.d[1][2];
+    this.faces.f[2][2] = this.faces.d[0][2];
+
+    console.log(this.faces.d[0][2]);
+    console.log(this.faces.d[1][2]);
+    console.log(this.faces.d[2][2]);
+
+    // D -> B
+    this.faces.d[0][2] = this.faces.b[0][0];
+    this.faces.d[1][2] = this.faces.b[1][0];
+    this.faces.d[2][2] = this.faces.b[2][0];
+
+    // B -> T
+    this.faces.b[0][0] = t[2][2];
+    this.faces.b[1][0] = t[1][2];
+    this.faces.b[2][0] = t[0][2];
   }
   rotateColorScheme() {
     for (const face in this.faces) {

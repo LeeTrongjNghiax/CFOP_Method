@@ -1,9 +1,13 @@
 function turnU(tag) {
   let tr = tag.parentElement.parentElement;
+
+  let turn = tr.children[4].children[0].innerHTML;
+
   let name = tr.querySelector("td:first-child").textContent.replace("OLL ", "");
   let pll = pllList.find(elem => elem.id == name);
 
-  pll.U();
+  if (tag.innerHTML == "U") pll.U();
+  else pll.R();
 
   tr.replaceChild(document.createElement("td"), tr.children[1]);
   tr.querySelector("td:nth-child(2)").innerHTML += drawSquare(pll);
