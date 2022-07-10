@@ -1,7 +1,3 @@
-<?php
-  include_once "PHP/connect.php"
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +28,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3">
-        <a href="HTML/CFOP.html">CFOP</a>
+        <a href="PHP/F2L.php">CFOP</a>
       </div>
       <div class="col-md-3">
         <a href="HTML/F2L.php">F2L</a>
@@ -45,17 +41,5 @@
       </div>
     </div>
   </div>
-
-  <?php
-    $sql = "SELECT f2l.id, f2la.algorithm, f2lr.faces FROM f2l INNER JOIN f2lalgorithm AS f2la ON f2l.id = f2la.id INNER JOIN f2lrubikcube as f2lr ON f2l.id = f2lr.id";
-    $result = mysqli_query($conn, $sql);
-    $resultCheck = mysqli_num_rows($result);
-
-    if ($resultCheck > 0) {
-      while ($row = mysqli_fetch_assoc($result)) {
-        echo $row['id'] . " " . $row['faces'] . " " . $row['algorithm'] . "<br>";
-      }
-    }
-  ?>
 </body>
 </html>

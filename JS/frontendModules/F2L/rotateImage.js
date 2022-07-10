@@ -1,6 +1,7 @@
 function rotateImage(tag) {
   let tr = tag.parentElement.parentElement;
   let name = tr.querySelector("td:first-child").textContent.replace("OLL ", "");
+
   let f2l = f2lList.find(elem => elem.id == name);
 
   if (/y$/.test(tag.textContent)) {
@@ -27,6 +28,7 @@ function rotateImage(tag) {
       regex = /[^y]/;
   }
   let selector = createSelector(f2l, regex);
+
   tr.replaceChild(document.createElement("td"), tr.children[3]);
   tr.querySelector("td:nth-child(4)").innerHTML += selector;
 }

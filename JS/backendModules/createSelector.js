@@ -1,12 +1,14 @@
-createSelector = (rubik, regex) => {
-  let selector = `<select name="oll${rubik.id}alg" style="background-color: black;">`
+createSelector = (algset, regex) => {
+  console.log(algset);
 
-  for (let j = 0; j < rubik.algorithms.length; j++) {
-    if (regex.test(rubik.algorithms[j].algorithm)) {
+  let selector = `<select name="oll${algset.id}alg" style="background-color: black;">`
+
+  for (let j = 0; j < algset.algorithms.length; j++) {
+    if (regex.test(algset.algorithms[j].algorithm)) {
       if (String(regex) != String(/[^y]/)) {
-        selector += `<option value="${rubik.algorithms[j].algorithm}">${rubik.algorithms[j].algorithm.replace(regex, "")}</option>`
+        selector += `<option value="${algset.algorithms[j].algorithm}">${algset.algorithms[j].algorithm.replace(regex, "")}</option>`
       } else {
-        selector += `<option value="${rubik.algorithms[j].algorithm}">${rubik.algorithms[j].algorithm}</option>`
+        selector += `<option value="${algset.algorithms[j].algorithm}">${algset.algorithms[j].algorithm}</option>`
       }
     }
   }

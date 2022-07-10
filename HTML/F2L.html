@@ -1,7 +1,3 @@
-<?php
-  include_once "../PHP/connect.php"
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -141,42 +137,6 @@
             </tr>
           </thead>
           <tbody>
-          <?php
-            $array = array();
-
-            $sql = "SELECT f2l.id, f2la.algorithm, f2lr.faces FROM f2l INNER JOIN f2lalgorithm AS f2la ON f2l.id = f2la.id INNER JOIN f2lrubikcube AS f2lr ON f2l.id = f2lr.id";
-            $result = mysqli_query($conn, $sql);
-            $resultCheck = mysqli_num_rows($result);
-
-            if ($resultCheck > 0) {
-              while ($row = mysqli_fetch_assoc($result)) {
-                array_push($array, $row['faces']);
-
-                echo "<tr>";
-                echo "<td>" . $row['id'] . "</td>";
-                echo "<td>" . $row['faces'] . "</td>";
-                echo '<td><button onclick="rotateImage(this)">Rotate y</button><br><button onclick="rotateColorScheme(this)">Rotate Color Scheme</button><br></td>';
-                echo "<td></td>";
-                echo "</tr>";
-              }
-            }
-
-            // <tr>
-            //   <td>${f2lList[i].id}</td>
-            //   <td>${drawCube(f2lList[i])}</td>
-            //   <td>
-            //     <button onclick="rotateImage(this)">Rotate y</button>
-            //     <br>
-            //     <button onclick="rotateColorScheme(this)">Rotate Color Scheme</button>
-            //     <br>
-            //   </td>
-            //   <td>${createSelector(f2lList[i], /[^y]/)}</td>
-            // </tr>
-          ?>
-
-          <script>
-            console.log("<?php print_r($array) ?>");
-          </script>
           </tbody>
         </table>
       </div>
