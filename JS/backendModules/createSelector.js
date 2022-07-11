@@ -1,6 +1,4 @@
 createSelector = (algset, regex) => {
-  console.log(algset);
-
   let selector = `<select name="oll${algset.id}alg" style="background-color: black;">`
 
   for (let j = 0; j < algset.algorithms.length; j++) {

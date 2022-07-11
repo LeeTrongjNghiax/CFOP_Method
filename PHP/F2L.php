@@ -1,7 +1,7 @@
 <?php
   include 'connect.php';
   include 'Modules/debugToConsole.php';
-  include 'rubikCube_DAO.php';
+  include 'f2l_DAO.php';
 ?>
 
 <!DOCTYPE html>
@@ -226,7 +226,7 @@
 
   for (let i = 0; i < f2lList.length; i++) {
     let algorithmsList = [];
-    for (let j = 0; j < f2lalgorithms.length; j++) {
+    for (let j = 0; j < f2lalgorithms[i].length; j++) {
       algorithmsList.push(new Algorithm(f2lalgorithms[i][j]));
     }
     f2lList[i] = new F2L(
