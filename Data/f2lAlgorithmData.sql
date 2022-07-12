@@ -216,4 +216,247 @@ INSERT INTO f2lalgorithm VALUES
   ("R U' R' r U' r' U2 r U r'", 41),
   ("y l' U l U2 l' U' l | L' U' L |", 41),
   ("y2 L U' L' l U' l' U2 l U l'", 41),
-  ("y' r' U r U2 r' U' r | R' U' R |", 41)
+  ("y' r' U r U2 r' U' r | R' U' R |", 41),
+
+  ("R2 U R2' U' R2", 42),
+  ("U' R' U R2 U' R'", 42),
+  ("y U' M F2 M'", 42),
+  ("y U' R U' R' U2 | L' U L |", 42),
+  ("y2 U' L' U L2 U' L'", 42),
+  ("y2 L2 U L2' U' L2", 42),
+  ("y' U' L U' L' U2 | R' U R |", 42),
+
+  ("U M F2 M'", 43),
+  ("U L' U L U2 | R U' R' |", 43),
+  ("y U L U' L2' U R", 43),
+  ("y L2 U' L2' U L2", 43),
+  ("y2 U R' U R U2 | L U' L' |", 43),
+  ("y' U R U' R2' U R", 43),
+  ("y' R2' U' R2 U R2'", 43), 
+
+  ("U2 R' U R U' S R S'", 44),
+  ("y R' F R2 U' R' U2 F'", 44),
+  ("y2 U2 (L F' L' F) (L U L')", 44),
+
+  ("L F' L2' U L U2' F", 45),
+  ("y U2 (L U' L') U (S' L' S)", 45),
+  ("y' U2 (R' F R F') (R' U' R)", 45),
+
+  ("U2 L2' u L2 u' L2'", 46),
+  ("y U2 R2 u' R2' u R2", 46),
+  ("y2 U2 R2 u R2' u' R2", 46),
+  ("y' U2 L2' u' L2 u L2'", 46),
+  
+  ("L F' U F L'", 47),
+  ("y R' F U' F' R", 47),
+  ("y' L' u' L U' L' u L", 47),
+  ("y2 R u R' U R u' R'", 47),
+
+  ("R' U' R2 U R'", 48),
+  ("y2 L' U' L2 U L'", 48),
+  
+  ("y L U L2' U' L", 49),
+  ("y' R U R2' U' R", 49),
+
+  ("F D R D' F'", 50),
+  ("y R F U F' R'", 50),
+  ("y L u L u' L'", 50),
+  ("y2 F L U L' F'", 50),
+  ("y' R u R u' R'", 50),
+
+  ("L' F' U' F L", 51),
+  ("R' u' R' u R", 51),
+  ("y F' D' L' D F", 51),
+  ("y2 L' u' L' u L", 51),
+  ("y' F' R' U' R F", 51),
+
+  ("U' L' U' L | R U' R' |", 52),
+  ("y U2 L' U' L2 U L2' U' L", 52),
+  ("y2 U' R' U' R | L U' L' |", 52),
+  ("y' U2 R' U' R2 U R2' U' R", 52),
+
+  ("U2' R U R2' U' R2 U R'", 53),
+  ("y U R U R' | L' U L |", 53),
+  ("y2 U2' L U L2' U' L2 U L'", 53),
+  ("y' U L U L' | R' U R |", 53),
+
+  ("F U2 F' | R U R' |", 54),
+  ("y L U2 L' | F U F' |", 54),
+  ("y2 U2 R' U R U2 l U L' U' M'", 54),
+  ("y' R U2 R' f R f'", 54),
+
+  ("R' U2 R | F' U' F |", 55),
+  ("y F' U2 F | L' U' L |", 55),
+  ("y' U2 L U' L' U2 r' U' R U M'", 55),
+  ("y2 L' U2 L f' L' f", 55),
+
+  ("U' R U2 R' U' | L U L' |", 56),
+  ("U R U R' | L U L' |", 56),
+  ("y U L' U L | R' U R |", 56),
+  ("y2 U' L U2 L' U' | R U R' |", 56),
+  ("y2 U L U L' | R U R' |", 56),
+  ("y' U R' U R | L' U L |", 56),
+  
+  ("U' R U' R' | L U' L' |", 57),
+  ("y U' L' U' L | R' U' R |", 57),
+  ("y U L' U2 L U | R' U' R |", 57),
+  ("y2 U' L U' L' | R U' R' |", 57),
+  ("y' U' R' U' R | L' U' L |", 57),
+  ("y' U R' U2 R U | L' U' L |", 57),
+
+  ("U2 F' L U L' F", 58),
+  ("y U2 L' (B U B') L", 58),
+  ("y2 f' U L U' f", 58),
+  
+  ("U2' R (B' U' B) R'", 59),
+  ("y U2' F R' U' R F'", 59),
+  ("y2 U2' L F' U' F L'", 59),
+
+  ("U R U' R' | L' U L |", 60),
+  ("U' R U2 R' U' | L' U' L |", 60),
+  ("y2 U L U' L' | R' U R |", 60),
+  ("y2 U L U2 L' U' | R' U' R |", 60),
+  
+  ("y L' U2 L U' | L U L' |", 61),
+  ("y U2 L' U L U' | L U2 L' |", 61),
+  ("y' R' U2 R U' | R U R' |", 61),
+  ("y' U2 R' U R U' | R U2 R' |", 61),
+
+  ("U2 R U' R' U | L' U' L |", 62),
+  ("y2 U2 L U' L' U | R' U' R |", 62),
+  
+  ("y U' L' U' L2 U2 L'", 63),
+  ("y' U' R' U' R2 U2 R'", 63),
+
+  ("M F M'", 64),
+  ("R U R' U' | L' U L |", 64),
+  ("y L' U L U l U L' U' M'", 64),
+  ("y2 M' B M", 64),
+  ("y2 L U L' U' | R' U R |", 64),
+  ("y' R' U R U r U R' U' M", 64),
+
+  ("U' R U R' | F U F' |", 65),
+  ("y U L' U L U | L U L' |", 65),
+  ("y2 U' L U L' y | R U R' |", 65),
+  ("y' U R' U R U | R U R' |", 65),
+
+  ("y U' L' U L | R U' R' |", 66),
+  ("y' U' R' U R | L U' L' |", 66),
+  
+  ("R U2 R' U | R' U' R |", 67),
+  ("U2 R U' R' U | R' U2 R |", 67),
+  ("y2 L U2 L' U | L' U' L |", 67),
+  ("U2 L U' L' U | L' U2 L |", 67),
+
+  ("y U2 L' U L U' | R U R' |", 68),
+  ("y' U2 R' U R U' | L U L' |", 68),
+  
+  ("U R U R2' U2 R", 69),
+  ("y2 U L U L2' U2 L", 69),
+
+  ("R U' R' f R' f'", 70),
+  ("y M F' M'", 70),
+  ("y L' U' L U | R U' R' |", 70),
+  ("y2 L U' L' U' l' U' L U M", 70),
+  ("y' M' B M", 70),
+  ("y' R' U' R U | L U' L' |", 70),
+
+  ("U' R U' R' U' | R' U R |", 71),
+  ("y U L' U' L | F' U' F |", 71),
+  ("y2 U' L U' L' U' | L' U L |", 71),
+  ("y' U R' U' R y | R' U' R |", 71),
+
+  ("U' F' U F | L U2 L' |", 72),
+  ("U' F' U' F U' | L U L' |", 72),
+  ("y U' L' U L U' | f R' f' |", 72),
+  ("y' U' R' U R U' | F U' F' |", 72),
+
+  ("U R U' R' U | f' L f |", 73),
+  ("y U F U' F' | R' U2 R |", 73),
+  ("y U F U F' U | R' U' R |", 73),
+  ("y2 U L U' L' U | F' U F |", 73),
+
+  ("R U' R' | L U2 L' |", 74),
+  ("y L' U' L | f R' f' |", 74),
+  ("y2 L U' L' | R U2 R' |", 74),
+  ("y' R' U' R | F U' F' |", 74),
+
+  ("R U R' | f' L f |", 75),
+  ("y L' U L | R' U2 R |", 75),
+  ("y2 L U L' | F' U F |", 75),
+  ("y' R' U R | L' U2 L |", 75),
+
+  ("R U R' U | L U L' |", 76),
+  ("y2 L U L' U | R U R' |", 76),
+  
+  ("y L' U' L U' | R' U' R |", 77),
+  ("y' R' U' R U' | L' U' L |", 77),
+
+  ("R2 U' R2' U R2", 78),
+  ("y2 L2' U' L2 U L2'", 78),
+  ("y F' R' F2 R F", 78),
+
+  ("f' R' U R f", 79),
+  ("y R' u' R u R", 79),
+  ("y' L' u' L u L", 79),
+  ("y2 f' D' L D f", 79),
+
+  ("y L2' U L2 U' L2'", 80),
+  ("y' R2 U R2' U' R2", 80),
+  ("F L F2' L' F'", 80),
+
+  ("L u L' u' L'", 81),
+  ("y f L U' L' f'", 81),
+  ("y2 R u R' u' R'", 81),
+  ("y' f D R' D' f'", 81),
+
+  ("L2' u' L2 u L2'", 82),
+  ("y L2' u L2 u' L2'", 82),
+  ("y2 R2 u' R2' u R2", 82),
+  ("y' R2 u R2' u' R2", 82),
+
+  ("L' u' L U L' u L", 83),
+  ("y L u L' U' L u' L'", 83),
+  ("y2 R' u' R U R' u R", 83),
+  ("y' R u R' U' R u' R'", 83),
+
+  ("R' F R2 U' R2' F' R", 84),
+  ("L F' L2' U' L2 F L'", 84),
+  ("y f' L' f U' L' U L", 84),
+  ("y2 f R f' L U2 L'", 84),
+  ("y' R U R' U' f R' f'", 84),
+
+  ("f R f' U R U' R'", 85),
+  ("y L F' L2' U L2 F L'", 85),
+  ("y R' F R2 U R2' F' R", 85),
+  ("y2 L' U' L U f' L f", 85),
+  ("y' f' L' f R' U2' R", 85),
+
+  ("R L U2 L' R'", 86),
+  ("y L' R' U2 R L", 86),
+  ("y2 L R U2 R' L'", 86),
+  ("y' R' L' U2 L R", 86),
+  
+  ("L F2' L' F U' F", 87),
+  ("L F' L' U' F U' | R U R' |", 87),
+  ("y L U' F' L' F L' U L", 87),
+
+  ("R' U F R F' | R U' R' |", 88),
+  ("y R' F2 R F' U F'", 88),
+  ("y R' F R U F' U | L' U' L |", 88),
+
+  ("R' F R U' F' | R U' R' |", 89),
+
+  ("y L F' L' U F | L' U L |", 90),
+
+  ("L' U L M' U R U' M U' R'", 91),
+  ("y2 R' U R M U L U' M' U' L'", 91),
+  
+  ("y R U' R' M' U' L' U M U L", 92),
+  ("y' L U' L' M U' R' U M' U R", 92),
+
+  ("L F' U2 F L", 93),
+  ("R U' R' L U2 L'", 93),
+  ("y r' U F2 U' r", 93),
+  ("y2 L U' L' R U2' R'", 93),
+  ("y' F R' U2' R F'", 93)

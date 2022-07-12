@@ -38,7 +38,6 @@
         WHERE f2lalgorithm.id = $i;";
 
       $result = $conn -> query($sql);
-      $row = $result -> fetch_assoc();
   
       if ( $result -> num_rows > 0) {
         while ( $row = $result -> fetch_assoc() ) {

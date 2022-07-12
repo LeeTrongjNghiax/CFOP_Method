@@ -1,17 +1,17 @@
 createSelector = (algset, regex) => {
-  let selector = `<select name="oll${algset.id}alg" style="background-color: black;">`
+  let selector = `<div name="oll${algset.id}alg" style="background-color: black;">`
 
   for (let j = 0; j < algset.algorithms.length; j++) {
     if (regex.test(algset.algorithms[j].algorithm)) {
       if (String(regex) != String(/[^y]/)) {
-        selector += `<option value="${algset.algorithms[j].algorithm}">${algset.algorithms[j].algorithm.replace(regex, "")}</option>`
+        selector += `<div value="${algset.algorithms[j].algorithm}">${j + 1}. ${algset.algorithms[j].algorithm.replace(regex, "")}</div>`
       } else {
-        selector += `<option value="${algset.algorithms[j].algorithm}">${algset.algorithms[j].algorithm}</option>`
+        selector += `<div value="${algset.algorithms[j].algorithm}">${j + 1}. ${algset.algorithms[j].algorithm}</div>`
       }
     }
   }
 
-  selector += `</select>`;
+  selector += `</div>`;
 
   return selector;
 }
