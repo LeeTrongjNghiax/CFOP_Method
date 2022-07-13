@@ -1,0 +1,20 @@
+Last Layer
+       
+Name   | CO | CP | EO | EP | Number of Case | Alt. Name
+--------------------------------------------------------
+Solved |    |    |    |    | 1              |
+EPLL   |    |    |    | x  | 4              | EPLL
+OELL   |    |    | x  |    | 3              | EOLL
+ELL    |    |    | x  | x  | 29             | ELL
+CPLL   |    | x  |    |    | 4              | CPLL
+PLL    |    | x  |    | x  | 21             | PLL
+CPEOLL |    | x  | x  |    | 15             | CPEOLL
+       |    | x  | x  | x  |                | PLLEO, ELLCP
+OCLL   | x  |    |    |    | 7              | COLL
+2GLL   | x  |    |    | x  | 84             | COEPLL
+OLL    | x  |    | x  |    | 57             | OLL
+OLLEP  | x  |    | x  | x  |                | OLLEP, ELLCO
+CLL    | x  | x  |    |    | 40 + 2         | CLL
+ZBLL   | x  | x  |    | x  | 493            | PLLCO, CLLEP
+OLLCP  | x  | x  | x  |    | 331            | OLLCP, CLLEO
+1LLL   | x  | x  | x  | x  | 3915           | LL

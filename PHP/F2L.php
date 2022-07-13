@@ -1,7 +1,6 @@
 <?php
-  include 'connect.php';
-  include 'Modules/debugToConsole.php';
-  include 'f2l_DAO.php';
+  include 'connection/connect.php';
+  include 'DAO/f2l_DAO.php';
 ?>
 
 <!DOCTYPE html>
