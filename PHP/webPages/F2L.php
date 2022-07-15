@@ -1,6 +1,6 @@
 <?php
-  include 'connection/connect.php';
-  include 'DAO/f2l_DAO.php';
+  include '../connection/connect.php';
+  include '../DAO/f2l_DAO.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,18 +11,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>F2L Method</title>
 
-  <script src="../JS/libraries/jquery-3.6.0.min.js"></script>
-  <script src="../JS/libraries/bootstrap.js"></script>
+  <script src="../../JS/libraries/jquery-3.6.0.min.js"></script>
+  <script src="../../JS/libraries/bootstrap.js"></script>
 
-  <script src="../JS/backendModules/drawCube.js"></script>
-  <script src="../JS/backendModules/createSelector.js"></script>
-  <script src="../JS/backendModules/globalValues.js"></script>
-  <script src="../JS/backendModules/numberToColor.js"></script>
+  <script src="../../JS/backendModules/drawCube.js"></script>
+  <script src="../../JS/backendModules/createSelector.js"></script>
+  <script src="../../JS/backendModules/globalValues.js"></script>
+  <script src="../../JS/backendModules/numberToColor.js"></script>
 
-  <script src="../JS/frontendModules/F2L/rotateImage.js"></script>
-  <script src="../JS/frontendModules/F2L/rotateColorScheme.js"></script>
+  <script src="../../JS/frontendModules/F2L/rotateImage.js"></script>
+  <script src="../../JS/frontendModules/F2L/rotateColorScheme.js"></script>
   
-  <link rel="stylesheet" href="../CSS/bootstrap.css">
+  <link rel="stylesheet" href="../../CSS/bootstrap.css">
 
   <style>
     body {
@@ -45,6 +45,11 @@
 </head>
 <body>
   <div class="container">
+
+    <?php
+      include "header.php";
+    ?>
+
     <div class="row">
       <div class="col-md-1">
         <h1>F2L</h1>
@@ -217,7 +222,7 @@
   </script>
 
   <?php
-    include 'webGenerators/F2LGen.php';
+    include '../webGenerators/F2LGen.php';
   ?>
 </body>
 </html>
