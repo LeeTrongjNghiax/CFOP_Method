@@ -1,8 +1,33 @@
 <?php
+  class Algorithm implements JsonSerializable {
+    private $algorithm;
+    private $status;
+
+    function __construct($algorithm, $status) {
+      $this->algorithm = $algorithm;
+      $this->status = $status;
+    }
+
+    public function get_algorithm() {
+      return $this -> algorithm;
+    }
+
+    public function get_status() {
+      return $this -> status;
+    }
+
+    public function jsonSerialize() {
+      return [
+        'algorithm' => $this->algorithm,
+        'status' => $this->status
+      ];
+    }
+  }
+
   function getF2L($conn) {
     $rubikcubes = array();
 
-    $sql = "SELECT f2lrubikcube.id, f2lrubikcube.face 
+    $sql = "SELECT f2lrubikcube.id, f2lrubikcube.face
       FROM f2l INNER JOIN f2lrubikcube
       ON f2l.id = f2lrubikcube.id";
 
@@ -27,12 +52,10 @@
 
     $count = mysqli_num_rows($result);
 
-    // echo $count;
-
     for ($i = 1; $i <= $count; $i++) { 
       $algorithms = array();
 
-      $sql = "SELECT f2lalgorithm.algorithm 
+      $sql = "SELECT f2lalgorithm.algorithm, f2lalgorithm.status
         FROM f2l INNER JOIN f2lalgorithm
         ON f2l.id = f2lalgorithm.id
         WHERE f2lalgorithm.id = $i;";
@@ -41,12 +64,42 @@
   
       if ( $result -> num_rows > 0) {
         while ( $row = $result -> fetch_assoc() ) {
-          array_push($algorithms, $row["algorithm"]);
+          array_push($algorithms, new Algorithm($row["algorithm"], $row["status"]) );
         }
       }
+      
       array_push($resultSet, $algorithms);
     }
-
     return $resultSet;
+  }
+
+  function getF2LAlgorithm($conn, $id) {
+    $algorithms = array();
+
+    $sql = "SELECT f2lalgorithm.algorithm, f2lalgorithm.status
+      FROM f2l INNER JOIN f2lalgorithm
+      ON f2l.id = f2lalgorithm.id
+      WHERE f2lalgorithm.id = $id;";
+
+    $result = $conn -> query($sql);
+
+    if ( $result -> num_rows > 0) {
+      while ( $row = $result -> fetch_assoc() ) {
+        array_push($algorithms, new Algorithm($row["algorithm"], $row["status"]) );
+      }
+      return $algorithms;
+    }
+    return null;
+  }
+
+  function changeAlgorithmStatus($conn, $algorithm, $status) {
+    $sql = "UPDATE f2lalgorithm
+      SET
+        f2lalgorithm.status = " . json_encode($status) . "
+      WHERE f2lalgorithm.algorithm = " . json_encode($algorithm) . "";
+
+    $result = $conn -> query($sql);
+
+    return $result;
   }
 ?>

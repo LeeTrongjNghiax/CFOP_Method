@@ -1,0 +1,35 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  font-size: 16px;
+  user-select: none;
+}
+
+button {
+  background-color: black;
+  border: 1px solid lightgreen;
+}
+
+select {
+  background-color: black;
+}
+
+input {
+  width: 70%;
+  background-color: black;
+  pointer-events: none;
+}
+
+.not-learned {
+  background-color: red;
+}
+
+.learning {
+  background-color: yellow;
+  color: black;
+}
+
+.learned {
+  background-color: green;
+}

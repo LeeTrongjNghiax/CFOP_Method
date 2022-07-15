@@ -555,8 +555,9 @@ class RubikCube{
 // }
 
 class Algorithm{
-  constructor(algorithm) {
+  constructor(algorithm, status) {
     this.algorithm = algorithm;
+    this.status = status;
   }
 
   getHTM() {

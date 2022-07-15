@@ -5,7 +5,7 @@
   for (let i = 0; i < f2lList.length; i++) {
     let algorithmsList = [];
     for (let j = 0; j < f2lalgorithms[i].length; j++) {
-      algorithmsList.push(new Algorithm(f2lalgorithms[i][j]));
+      algorithmsList.push(new Algorithm(f2lalgorithms[i][j].algorithm, f2lalgorithms[i][j].status));
     }
     f2lList[i] = new F2L(
       i + 1,
@@ -13,16 +13,18 @@
       algorithmsList
     );
   }
-  
+
+  // ------------------------------------------------------------
+
   for (let i = 0; i < f2lList.length; i++) {
     document.querySelector("table > tbody").innerHTML += `
       <tr>
         <td>${f2lList[i].id}</td>
         <td>${drawCube(f2lList[i])}</td>
         <td>
-          <button onclick="rotateImage(this)">Rotate y</button>
+          <button class="rotateY" onclick="rotateImage(this)">y</button>
           <br>
-          <button onclick="rotateColorScheme(this)">Rotate Color Scheme</button>
+          <button class="rotateColor" onclick="rotateColorScheme(this)">Color Scheme</button>
           <br>
         </td>
         <td>${createSelector(f2lList[i], /[^y]/)}</td>
