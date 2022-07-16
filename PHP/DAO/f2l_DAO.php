@@ -99,7 +99,15 @@
       WHERE f2lalgorithm.algorithm = " . json_encode($algorithm) . "";
 
     $result = $conn -> query($sql);
+    return $result;
+  }
 
+  function addAlgorithm($conn, $algorithm, $id) {
+    $sql = "INSERT INTO f2lalgorithm VALUE (" . json_encode($algorithm) . ", " . $id . ", " . json_encode("not learned") . ")";
+
+    echo $sql;
+
+    $result = $conn -> query($sql);
     return $result;
   }
 ?>

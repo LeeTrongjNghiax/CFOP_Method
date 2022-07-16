@@ -21,6 +21,11 @@ input {
   pointer-events: none;
 }
 
+input[name="submitAlgorithm"] {
+  user-select: all;
+  pointer-events: all;
+}
+
 .not-learned {
   background-color: red;
 }

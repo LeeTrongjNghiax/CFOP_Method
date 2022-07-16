@@ -1,5 +1,12 @@
 createSelector = (algset, regex) => {
-  let selector = `<form action="../../PHP/redirects/F2L.php" method="post">`
+  let selector = `
+  <form action="../../PHP/redirects/F2LSubmitAlgorithm.php" method="post">
+    <input name="id" type="hidden" value="${algset.id}">
+    <input name="submitAlgorithm">
+    <button type="submit">Submit Algorithm!</button>
+  </form>
+  `
+  selector += `<form action="../../PHP/redirects/F2L.php" method="post">`
   let havingAlgortihm = false;
 
   for (let j = 0; j < algset.algorithms.length; j++) {
@@ -7,11 +14,6 @@ createSelector = (algset, regex) => {
     let s2 = "";
     let s3 = "";
     let tag = "";
-
-    // if (algset.algorithms[j].status == "not learned") 
-    //   tag = "not-learned";
-    // else 
-    //   tag = algset.algorithms[j].status;
 
     tag = stringToKebabCase(algset.algorithms[j].status);
     
@@ -45,7 +47,7 @@ createSelector = (algset, regex) => {
     }
   }
 
-  if (havingAlgortihm) selector += `<button type="submit">Change</button></form>`;
+  if (havingAlgortihm) selector += `<button type="submit">Change Status</button></form>`;
 
   return selector;
 }
