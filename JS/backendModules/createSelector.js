@@ -2,7 +2,7 @@ createSelector = (algset, regex) => {
   let selector = `
   <form action="../../PHP/redirects/F2LSubmitAlgorithm.php" method="post">
     <input name="id" type="hidden" value="${algset.id}">
-    <input name="submitAlgorithm">
+    <input name="submitAlgorithm" pattern="^[UDFBRLudfbrlxyz]$">
     <button type="submit">Submit Algorithm!</button>
   </form>
   `
@@ -41,6 +41,7 @@ createSelector = (algset, regex) => {
           <option value="learning" ${s2}>Learning</option>
           <option value="learned" ${s3}>Learned</option>
         </select>
+        <a class="delete-btn" href="../../PHP/redirects/F2LDeleteAlgorithm.php?id=${algset.algorithms[j].algorithm}" onclick="return confirm('Are you sure to delete the record?')">Delete</a>
         <br>
       `;
       havingAlgortihm = true;

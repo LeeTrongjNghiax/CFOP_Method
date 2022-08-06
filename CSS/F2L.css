@@ -16,7 +16,7 @@ select {
 }
 
 input {
-  width: 70%;
+  width: 50%;
   background-color: black;
   pointer-events: none;
 }
@@ -37,4 +37,10 @@ input[name="submitAlgorithm"] {
 
 .learned {
   background-color: green;
+}
+
+.delete-btn {
+  border: 1px solid red;
+  padding: 3px;
+  color: white;
 }

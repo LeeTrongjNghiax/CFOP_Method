@@ -2,8 +2,8 @@
   include '../connection/connect.php';
   include '../DAO/f2l_DAO.php';
 
-  addAlgorithm($conn, $_POST['submitAlgorithm'], $_POST['id']);
-  
+  deleteAlgorithm($conn, $_GET['id']);
+
   header("Location: ../webPages/F2L.php");
   exit();
 ?>
