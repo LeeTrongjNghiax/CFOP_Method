@@ -44,3 +44,9 @@ input[name="submitAlgorithm"] {
   padding: 3px;
   color: white;
 }
+
+@media screen and (max-width: 740px) {
+  /* body {
+    background-color: green
+  }; */
+}

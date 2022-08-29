@@ -2,7 +2,7 @@ createSelector = (algset, regex) => {
   let selector = `
   <form action="../../PHP/redirects/F2LSubmitAlgorithm.php" method="post">
     <input name="id" type="hidden" value="${algset.id}">
-    <input name="submitAlgorithm" pattern="^[UDFBRLudfbrlxyz]$">
+    <input name="submitAlgorithm" pattern="^[UDFBRLMESudfbrlxyz](2|')?( [UDFBRLMESudfbrlxyz](2|')?)+$">
     <button type="submit">Submit Algorithm!</button>
   </form>
   `
