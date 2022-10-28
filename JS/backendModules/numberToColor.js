@@ -1,4 +1,4 @@
-function numberToColor(num) {
+numberToColor = num => {
   switch (num) {
     case 0:
       // return `gray`;
